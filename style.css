@@ -64,7 +64,7 @@
     }
 /* fonts end */
 
-
+/*☞*/
 
     * {
         box-sizing: border-box;
@@ -78,6 +78,7 @@
 
     body {
         font-family: 'EB-Garamond', 'Times New Roman', Times, serif;
+        font-feature-settings: "ornm"; /* This is for ornaments */
         line-height: 1.6;
         color: var(--content-text);
     }
@@ -90,7 +91,7 @@
         margin-bottom: 15px;
         text-align: center;
         font-weight: 400;
-        font-size: 40px;
+        font-size: 75px;
     }
 
     section {
@@ -148,56 +149,56 @@
         height: 100vh; /* full height */
     }
 
-    .sidebar hr { /*separator for sidebar*/
-        border: none;
-        height: 0.5px;
-        margin-left: 70px;
-        margin-right: 70px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: var(--content-text);
-    }
+        .sidebar hr { /*separator for sidebar*/
+            border: none;
+            height: 0.5px;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: var(--content-text);
+        }
 
-    .sidebar h2 {
-        text-align: center;
-        font-size: 60px;
-        font-weight: 400;
-        line-height: 1;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        font-style: normal;
-    }
-    .sidebar-subtitle {
-        text-align: center;
-        font-size: 20px;
-    }
-    .sidebar-credits {
-        text-align: center;
-        font-size: 15px;
-    }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 70px;
+            font-weight: 400;
+            line-height: 1;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-style: normal;
+        }
+        .sidebar-subtitle {
+            text-align: center;
+            font-size: 20px;
+        }
+        .sidebar-credits {
+            text-align: center;
+            font-size: 15px;
+        }
 
-    .sidebar img {
-        width: 100%;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+        .sidebar img {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-    .sidebar ul {
-        list-style: none;
-        font-size: 20px;
-        text-align: center;
-        font-style: italic;
-    }
+        .sidebar ul {
+            list-style: none;
+            font-size: 20px;
+            text-align: center;
+            font-style: italic;
+        }
 
-    .sidebar ul li a {
-        color: var(--link-color);
-        text-decoration: none;
-        transition: color ease 0.5s;
-    }
-    .sidebar ul li a:hover {
-        color: var(--accent-color);
-        text-decoration: none;
-    }
+        .sidebar ul li a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color ease 0.5s;
+        }
+        .sidebar ul li a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
 
     .content {
         margin-left: var(--side-bar-width); /* space for the sidebar */
@@ -216,6 +217,23 @@
         margin-bottom: 50px;
         background-color: var(--content-text);
     }
+
+    /* about */
+        .custom-bullets {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0; /* Remove padding */
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .custom-bullets li {
+            position: relative; /* Position for custom bullet */
+            padding-left: 35px; /* Space for the bullet */
+        }
+        .custom-bullets li::before {
+            content: '☞'; /* Finger bullet character */
+            position: absolute; /* Position it absolutely */
+            left: 0; /* Align to the left */
+        }
 
     /* portfolio container for .content */
         
