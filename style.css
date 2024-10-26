@@ -120,11 +120,11 @@
     /*section*/
     .bg-img-shorter {
         height: 30vh;
-        background-image: url(images/The-Mill-of-Montmartre-Georges-Michel-French-ca-820-red.png);
+        background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /*with fallback lq image*/
     }
     .bg-img { /*paralax bacgkground image section*/
         height: 100vh;
-        background-image: url(images/The-Mill-of-Montmartre-Georges-Michel-French-ca-820-red.png);
+        background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg);
     }
         .bg-img .title-container {
             position: absolute; 
@@ -426,9 +426,6 @@
 
     .content {
         margin-left: 200px; /* Adjust content margin */
-    }
-    .sidebar h2 {
-        font-size: 40px;
     }
     .portfolio-container {
         grid-template-columns: 1fr; /* Change to a single column */
