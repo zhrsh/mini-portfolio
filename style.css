@@ -1,30 +1,38 @@
-/* CSS BY ZAHRA AS */
+/* - - - - - - - CSS BY ZAHRA AS - - - - - - - */
+
+
 
 /* global (custom) variables */
     :root {
-        --sidebar-bg: rgb(14, 14, 14); /* Sidebar background color */
-        --sidebar-text: white; /* Sidebar text color */
-        --content-bg: rgb(20, 20, 20); /* Main content background color */
-        --content-text: white; /* Main content text color */
-        --link-color: white; /* Link color in sidebar */
+        --sidebar-bg: rgb(14, 14, 14); /* sidebar background color */
+        --sidebar-text: white; /* sidebar text color */
+        --content-bg: rgb(20, 20, 20); /* main content background color */
+        --content-text: white; /* main content text color */
+        --link-color: white;
         --accent-color: rgb(197, 22, 22);
         --accent-color-darker: rgb(124, 16, 16);
         --side-bar-width: 400px;
         --eb-garamond:'EB-Garamond', 'Times New Roman', Times, serif;
-
     }
 /* global variables end */
 
 
 
-/* custom fonts: UnifrakturMaguntia */
+/* custom fonts: Blackletter */
     @font-face { 
         font-family: 'Blackletter';
-        src: url('fonts/meyne_textur.ttf') format('woff2');
+        src: url('fonts/meyne_textur.ttf') format('truetype');
         font-weight: 400; /* range of weights */
         font-style: normal;
     }
-/* custom fonts: EB-GARAMOND */
+/* custom fonts: Blackletter_Fallback, incase the ttf does not load */
+    @font-face { 
+        font-family: 'Blackletter_Fallback';
+        src: url('fonts/UnifrakturMaguntia-webfont.woff') format('woff');
+        font-weight: 400; /* range of weights */
+        font-style: normal;
+    }
+/* custom fonts: EB-Garamond */
 /* normal import */
     @font-face { 
         font-family: 'EB-Garamond';
@@ -67,8 +75,9 @@
     }
 /* fonts end */
 
-/*☞*/
 
+
+/* - - - - - - - TAGS - - - - - - - */
     * {
         box-sizing: border-box;
         margin: 0;
@@ -81,7 +90,7 @@
 
     body {
         font-family: var(--eb-garamond);
-        font-feature-settings: "ornm"; /* This is for ornaments */
+        font-feature-settings: "ornm"; /* for EB Garamond ornaments like the finger bullet */
         line-height: 1.6;
         color: var(--content-text);
     }
@@ -105,12 +114,18 @@
         background-position: center;
         width: 100%;
     }
+/* - - - - - - - TAGS END - - - - - - - */
+
+
+
+/* - - - - - - - CLASSES - - - - - - - */
 
     /* font styles */
     .goth {
-        font-family: 'Blackletter', 'EB-Garamond', 'Times New Roman', Times, serif;
+        font-family: 'Blackletter', 'Blackletter_Fallback', 'EB-Garamond', 'Times New Roman', Times, serif;
         font-weight: 400;
     }
+
     .swash {
         font-family: 'EB-Garamond', 'Times New Roman', Times, serif;
         font-style: italic;
@@ -118,7 +133,7 @@
         font-weight: 400;
     }
 
-    /*section*/
+    /* section classes */
     .bg-img-shorter {
         height: 30vh;
         background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /*with fallback lq image*/
@@ -249,7 +264,7 @@
                 left: 0; /* align to the left */
             }
         
-            /*used grid.layoutit.com*/
+            /* used grid.layoutit.com */
             .about {  
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
@@ -335,7 +350,7 @@
         .portfolio-item {
             position: relative;
             overflow: hidden;
-            border: 10px solid var(--content-text); /* Keep the border, but no rounded corners */
+            border: 10px solid var(--content-text); 
         }
         
         .portfolio-item img {
@@ -356,13 +371,13 @@
         .project-name {
             position: absolute;
             font-style: italic;
-            bottom: 0; /* Align to the bottom */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
+            bottom: 0; /* align to the bottom */
+            left: 0; /* align to the left */
+            width: 100%; /* full width */
             color: var(--sidebar-bg);
             background-color: var(--content-text);
-            padding: 5px; /* Adjust padding as needed */
-            box-sizing: border-box; /* Ensure padding is included in width */
+            padding: 5px;
+            box-sizing: border-box; /* ensure padding is included in width */
             transition: color 0.8s ease;
         }
 
@@ -402,18 +417,19 @@
         .get-in-touch button:hover {
             background-color: var(--accent-color-darker);
         }
-    
+/* - - - - - - - CLASSES END - - - - - - - */
 
 
-/* *TRYING* to get responsive styles */
+
+/* - - - - - - - RESPONSIVE STYLES - - - - - - - */
 
 @media (max-width: 1180px) {
     .sidebar {
-        width: 200px; /* Adjust sidebar width for smaller screens */
+        width: 200px; /* adjust sidebar width for smaller screens */
     }
 
     .content {
-        margin-left: 200px; /* Adjust content margin */
+        margin-left: 200px; /* adjust content margin */
     }
     .sidebar h2 {
         font-size: 50px;
@@ -421,18 +437,11 @@
 }
 
 @media (max-width: 900px) {
-    .sidebar {
-        width: 200px; /* Adjust sidebar width for smaller screens */
-    }
-
-    .content {
-        margin-left: 200px; /* Adjust content margin */
-    }
     .portfolio-container {
-        grid-template-columns: 1fr; /* Change to a single column */
+        grid-template-columns: 1fr; /* change portfolio grid to a single column */
     }
     .about {
-        grid-template-columns: 1fr; /* Change to a single column */
+        grid-template-columns: 1fr; /* change about grid to a single column */
         grid-template-areas:
           "about-pfp"
           "about-text"
@@ -448,16 +457,16 @@
     }
 
     .sidebar {
-        width: 100%; /* Full width for sidebar on small screens */
-        position: relative; /* Change to relative */
-        height: auto; /* Auto height */
+        width: 100%; /* full width for sidebar on small screens */
+        position: relative; /* change to relative */
+        height: auto; /* auto height */
     }
     .sidebar h2 {
         font-size: 70px;
     }
 
     .content {
-        margin-left: 0; /* No margin on small screens */
+        margin-left: 0; /* no margin on small screens */
     }
 
     .bg-img { /*paralax bacgkground image section*/
