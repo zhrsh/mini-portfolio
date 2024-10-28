@@ -93,6 +93,7 @@
         font-feature-settings: "ornm"; /* for EB Garamond ornaments like the finger bullet */
         line-height: 1.6;
         color: var(--content-text);
+        background-color: var(--content-bg);
     }
 
     p {
@@ -120,121 +121,131 @@
 
 /* - - - - - - - CLASSES - - - - - - - */
 
-    /* font styles */
-    .goth {
-        font-family: 'Blackletter', 'Blackletter_Fallback', 'EB-Garamond', 'Times New Roman', Times, serif;
-        font-weight: 400;
+/* font styles */
+.goth {
+    font-family: 'Blackletter', 'Blackletter_Fallback', 'EB-Garamond', 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+.swash {
+    font-family: 'EB-Garamond', 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-feature-settings: 'swsh' 1; /* EB Garamond swash */
+    font-weight: 400;
+}
+
+/* section classes */
+.bg-img-shorter {
+    height: 30vh;
+    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /*with fallback lq image*/
+}
+.bg-img { /*paralax bacgkground image section*/
+    height: 100vh;
+    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg);
+}
+    .bg-img .title-container {
+        position: absolute; 
+        bottom: 25px;
+        right: 70px;
+        color: var(--content-text);
+    }
+        .bg-img .title-container h2 {
+            text-align: right;
+            font-size: 100px;
+            margin-top: -35px;
+            text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);
+        }
+        .bg-img .title-container p {
+            text-align: right;
+            font-size: 35px;
+            text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);;
+        }
+/* section classes end */
+
+
+/* main container for the whole page */
+.container {
+    display: flex;
+}
+
+
+
+/* side bar */
+.sidebar {
+    width: var(--side-bar-width); /* fixed width for the sidebar */
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 40px;
+    position: fixed; /* fixed position */
+    height: 100vh; /* full height */
+    overflow: scroll;
+}
+
+    .sidebar hr { /*separator for sidebar*/
+        border: none;
+        height: 0.5px;
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: var(--content-text);
     }
 
-    .swash {
-        font-family: 'EB-Garamond', 'Times New Roman', Times, serif;
+    .sidebar h2 {
+        text-align: center;
+        font-size: 70px;
+        font-weight: 400;
+        line-height: 1;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-style: normal;
+    }
+    .sidebar-subtitle {
+        text-align: center;
+        font-size: 20px;
+    }
+    .sidebar-credits {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .sidebar img {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        font-size: 20px;
+        text-align: center;
         font-style: italic;
-        font-feature-settings: 'swsh' 1; /* EB Garamond swash */
-        font-weight: 400;
     }
 
-    /* section classes */
-    .bg-img-shorter {
-        height: 30vh;
-        background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /*with fallback lq image*/
+    .sidebar ul li a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.5s ease;
     }
-    .bg-img { /*paralax bacgkground image section*/
-        height: 100vh;
-        background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg);
+    .sidebar ul li a:hover {
+        color: var(--accent-color);
+        text-decoration: none;
     }
-        .bg-img .title-container {
-            position: absolute; 
-            bottom: 25px;
-            right: 70px;
-            color: var(--content-text);
-        }
-            .bg-img .title-container h2 {
-                text-align: right;
-                font-size: 100px;
-                margin-top: -35px;
-                text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);
-            }
-            .bg-img .title-container p {
-                text-align: right;
-                font-size: 35px;
-                text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);;
-            }
+/* side bar end */
 
-    .container {
-        display: flex;
-    }
 
-    .sidebar {
-        width: var(--side-bar-width); /* fixed width for the sidebar */
-        background: var(--sidebar-bg);
-        color: var(--sidebar-text);
-        padding: 40px;
-        position: fixed; /* fixed position */
-        height: 100vh; /* full height */
-        overflow: scroll;
-    }
 
-        .sidebar hr { /*separator for sidebar*/
-            border: none;
-            height: 0.5px;
-            margin-left: 70px;
-            margin-right: 70px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            background-color: var(--content-text);
-        }
+/* content */
+.content {
+    margin-left: var(--side-bar-width); /* space for the sidebar */
+    flex: 1; /* take the remaining space */
+}
 
-        .sidebar h2 {
-            text-align: center;
-            font-size: 70px;
-            font-weight: 400;
-            line-height: 1;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            font-style: normal;
-        }
-        .sidebar-subtitle {
-            text-align: center;
-            font-size: 20px;
-        }
-        .sidebar-credits {
-            text-align: center;
-            font-size: 15px;
-        }
-
-        .sidebar img {
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            font-size: 20px;
-            text-align: center;
-            font-style: italic;
-        }
-
-        .sidebar ul li a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.5s ease;
-        }
-        .sidebar ul li a:hover {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-    .content {
-        margin-left: var(--side-bar-width); /* space for the sidebar */
-        flex: 1; /* take the remaining space */
-    }
-
-    .content .main-content {
+    .content .content-sections {
         padding: 40px;
         background-color: var(--content-bg);
     }
-    .main-content h2 {
+    .content-sections h2 {
         text-transform: uppercase;
         font-weight: 400;
     }
@@ -246,177 +257,191 @@
         margin-bottom: 50px;
         background-color: var(--content-text);
     }
+/* content end */
 
-    /* about */
-        .custom-bullets {
-            list-style-type: none; /* Remove default bullets */
-            padding: 0; /* Remove padding */
-            margin-left: 10px;
-            font-size: 20px;
-        }
-            .custom-bullets li {
-                position: relative; /* Position for custom bullet */
-                padding-left: 35px; /* Space for the bullet */
-            }
-            .custom-bullets li::before {
-                content: '☞'; /* finger bullet character */
-                position: absolute; 
-                left: 0; /* align to the left */
-            }
-        
-            /* used grid.layoutit.com */
-            .about {  
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto auto;
-                gap: 20px 20px; 
-                grid-auto-flow: row;
-                grid-template-areas:
-                  "about-pfp about-text about-text"
-                  "about-pfp about-list1 about-list2"
-                  ". . .";
-            }
-            .about .header {
-                background-color: var(--content-text);
-                width: 100%;
-                color: var(--content-bg);
-            }
-            .about h3 {
-                font-size: 24px;
-            }
-            .about h2 {
-                font-size: 27px;
-                color: var(--content-bg);
-                padding: 1px 1px 1px 15px; /*last one is left*/
-                margin-bottom: 20px;
-            }
-            .about hr {
-                margin: 20px 0px 0px 0px;
-            }
-            /*grid element 1*/
-            .about-pfp { 
-                grid-area: about-pfp; 
-                height: min-content;
-                background-color: var(--content-text);
-                padding: 10px;
-                font-style: italic;
-                color: var(--content-bg);
-            }
-                .about-pfp .pfp-img-container {
-                    width: 100%; /* Make the image responsive */
-                    height: auto; /* Maintain aspect ratio */
-                    overflow: hidden;
-                    position: relative; /* For positioning child elements if needed */
-                }
-                .about-pfp .pfp-img-container img {
-                    width: 100%; /* Make the image responsive */
-                    height: auto; /* Maintain aspect ratio */
-                    object-fit: cover; /* Ensure the image covers the container */
-                    display: block;
-                    transition: transform 0.8s ease;
-                }
-                .about-pfp .pfp-img-container img:hover {
-                    transform: scale(1.1);
-                }
-            /*grid element 2*/
-            .about-text { 
-                grid-area: about-text; 
-                height: auto;
-            }
-                .about-text h2 {
-                    font-size: 38px;
-                }
 
-            /*grid element 3*/
-            .about-list1 { 
-                grid-area: about-list1; 
-            }
 
-            /*grid element 4*/
-            .about-list2 { 
-                grid-area: about-list2; 
-            }
-
-              
-    /* portfolio container for .content */
-    
-        .portfolio-container {
-            display: grid;
-            margin-top: 15px;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+/* about */
+    .custom-bullets {
+        list-style-type: none; /* Remove default bullets */
+        padding: 0; /* Remove padding */
+        margin-left: 10px;
+        font-size: 20px;
+    }
+        .custom-bullets li {
+            position: relative; /* Position for custom bullet */
+            padding-left: 35px; /* Space for the bullet */
         }
-        
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border: 10px solid var(--content-text); 
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.8s ease, filter 0.8s ease;
-            filter: saturate(0%);
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-            filter: saturate(100%);
-        }
-        .portfolio-item:hover .project-name {
-            color: var(--accent-color);
-        }
-        
-        .project-name {
-            position: absolute;
-            font-style: italic;
-            bottom: 0; /* align to the bottom */
+        .custom-bullets li::before {
+            content: '☞'; /* finger bullet character */
+            position: absolute; 
             left: 0; /* align to the left */
-            width: 100%; /* full width */
-            color: var(--sidebar-bg);
+        }
+    
+        /* used grid.layoutit.com */
+        .about {  
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px 20px; 
+            grid-auto-flow: row;
+            grid-template-areas:
+                "about-pfp about-text about-text"
+                "about-pfp about-list1 about-list2"
+                ". . .";
+        }
+        .about .header {
             background-color: var(--content-text);
-            padding: 5px;
-            box-sizing: border-box; /* ensure padding is included in width */
-            transition: color 0.8s ease;
+            width: 100%;
+            color: var(--content-bg);
+        }
+        .about h3 {
+            font-size: 24px;
+        }
+        .about h2 {
+            font-size: 27px;
+            color: var(--content-bg);
+            padding: 1px 1px 1px 15px; /*last one is left*/
+            margin-bottom: 20px;
+        }
+        .about hr {
+            margin: 20px 0px 0px 0px;
+        }
+        /*grid element 1*/
+        .about-pfp { 
+            grid-area: about-pfp; 
+            height: min-content;
+            background-color: var(--content-text);
+            padding: 10px;
+            font-style: italic;
+            color: var(--content-bg);
+        }
+            .about-pfp .pfp-img-container {
+                width: 100%; /* Make the image responsive */
+                height: auto; /* Maintain aspect ratio */
+                overflow: hidden;
+                position: relative; /* For positioning child elements if needed */
+            }
+            .about-pfp .pfp-img-container img {
+                width: 100%; /* Make the image responsive */
+                height: auto; /* Maintain aspect ratio */
+                object-fit: cover; /* Ensure the image covers the container */
+                display: block;
+                transition: transform 0.8s ease;
+            }
+            .about-pfp .pfp-img-container img:hover {
+                transform: scale(1.1);
+            }
+        /*grid element 2*/
+        .about-text { 
+            grid-area: about-text; 
+            height: auto;
+        }
+            .about-text h2 {
+                font-size: 38px;
+            }
+
+        /*grid element 3*/
+        .about-list1 { 
+            grid-area: about-list1; 
         }
 
-    /* get in touch container for .content */
-        .get-in-touch {
-            margin: 0 auto;
-            padding: 30px;
-            width: 100%;
-            background-color: var(--sidebar-bg);
+        /*grid element 4*/
+        .about-list2 { 
+            grid-area: about-list2; 
         }
-        .get-in-touch h2 {
-            text-align: center;
-            padding-bottom: 15px;
-        }
-        .get-in-touch input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 0px;
-            font-family: var(--eb-garamond);
-            height: 60px;
-            font-size: 18px;
-        }
-        .get-in-touch button {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--accent-color);
-            color: white;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            font-family: var(--eb-garamond);
-            font-size: 18px;
-            transition: background-color 0.5s ease;
-        }
-        .get-in-touch button:hover {
-            background-color: var(--accent-color-darker);
-        }
+/* about end */
+
+
+            
+/* portfolio container */
+
+    .portfolio-container {
+        display: grid;
+        margin-top: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border: 10px solid var(--content-text); 
+    }
+    
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.8s ease, filter 0.8s ease;
+        filter: saturate(0%);
+    }
+    
+    .portfolio-item:hover img {
+        transform: scale(1.1);
+        filter: saturate(100%);
+    }
+    .portfolio-item:hover .project-name {
+        color: var(--accent-color);
+    }
+    
+    .project-name {
+        position: absolute;
+        font-style: italic;
+        bottom: 0; /* align to the bottom */
+        left: 0; /* align to the left */
+        width: 100%; /* full width */
+        color: var(--sidebar-bg);
+        background-color: var(--content-text);
+        padding: 5px;
+        box-sizing: border-box; /* ensure padding is included in width */
+        transition: color 0.8s ease;
+    }
+/* portfolio end */
+
+
+
+/* get in touch container */
+    .get-in-touch {
+        margin: 0 auto;
+        padding: 30px;
+        width: 100%;
+        background-color: var(--sidebar-bg);
+    }
+    .get-in-touch h2 {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .get-in-touch input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 0px;
+        font-family: var(--eb-garamond);
+        height: 60px;
+        font-size: 18px;
+    }
+    .get-in-touch button {
+        width: 100%;
+        padding: 10px;
+        background-color: var(--accent-color);
+        color: white;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        font-family: var(--eb-garamond);
+        font-size: 18px;
+        transition: background-color 0.5s ease;
+    }
+    .get-in-touch button:hover {
+        background-color: var(--accent-color-darker);
+    }
+/* get in touch end */
+
+
+/* back to the top button for mobile only */
+
+
 /* - - - - - - - CLASSES END - - - - - - - */
 
 
