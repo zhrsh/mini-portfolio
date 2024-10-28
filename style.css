@@ -5,10 +5,8 @@
 /* global (custom) variables */
     :root {
         --sidebar-bg: rgb(14, 14, 14); /* sidebar background color */
-        --sidebar-text: white; /* sidebar text color */
+        --foreground: white; /* mostly for text color */
         --content-bg: rgb(20, 20, 20); /* main content background color */
-        --content-text: white; /* main content text color */
-        --link-color: white;
         --accent-color: rgb(197, 22, 22);
         --accent-color-darker: rgb(124, 16, 16);
         --side-bar-width: 400px;
@@ -92,7 +90,7 @@
         font-family: var(--eb-garamond);
         font-feature-settings: "ornm"; /* for EB Garamond ornaments like the finger bullet */
         line-height: 1.6;
-        color: var(--content-text);
+        color: var(--foreground);
         background-color: var(--content-bg);
     }
 
@@ -147,7 +145,7 @@
         position: absolute; 
         bottom: 25px;
         right: 70px;
-        color: var(--content-text);
+        color: var(--foreground);
     }
         .bg-img .title-container h2 {
             text-align: right;
@@ -174,7 +172,7 @@
 .sidebar {
     width: var(--side-bar-width); /* fixed width for the sidebar */
     background: var(--sidebar-bg);
-    color: var(--sidebar-text);
+    color: var(--foreground);
     padding: 40px;
     position: fixed; /* fixed position */
     height: 100vh; /* full height */
@@ -188,7 +186,7 @@
         margin-right: 70px;
         margin-top: 30px;
         margin-bottom: 30px;
-        background-color: var(--content-text);
+        background-color: var(--foreground);
     }
 
     .sidebar h2 {
@@ -200,6 +198,15 @@
         margin-bottom: 15px;
         font-style: normal;
     }
+    .sidebar a {
+        text-decoration: none;
+        color: var(--foreground);
+        transition: color 0.5s ease;
+    }
+    .sidebar a:hover {
+        color: var(--accent-color);
+    }
+    
     .sidebar-subtitle {
         text-align: center;
         font-size: 20px;
@@ -223,7 +230,7 @@
     }
 
     .sidebar ul li a {
-        color: var(--link-color);
+        color: var(--foreground);
         text-decoration: none;
         transition: color 0.5s ease;
     }
@@ -255,7 +262,7 @@
         height: 1px;
         margin-top: 50px;
         margin-bottom: 50px;
-        background-color: var(--content-text);
+        background-color: var(--foreground);
     }
 /* content end */
 
@@ -291,7 +298,7 @@
                 ". . .";
         }
         .about .header {
-            background-color: var(--content-text);
+            background-color: var(--foreground);
             width: 100%;
             color: var(--content-bg);
         }
@@ -311,7 +318,7 @@
         .about-pfp { 
             grid-area: about-pfp; 
             height: min-content;
-            background-color: var(--content-text);
+            background-color: var(--foreground);
             padding: 10px;
             font-style: italic;
             color: var(--content-bg);
@@ -366,7 +373,7 @@
     .portfolio-item {
         position: relative;
         overflow: hidden;
-        border: 10px solid var(--content-text); 
+        border: 10px solid var(--foreground); 
     }
     
     .portfolio-item img {
@@ -391,7 +398,7 @@
         left: 0; /* align to the left */
         width: 100%; /* full width */
         color: var(--sidebar-bg);
-        background-color: var(--content-text);
+        background-color: var(--foreground);
         padding: 5px;
         box-sizing: border-box; /* ensure padding is included in width */
         transition: color 0.8s ease;
@@ -439,8 +446,12 @@
 /* get in touch end */
 
 
-/* back to the top button for mobile only */
 
+/* back to the top button for mobile only */
+.back-to-top {
+    display: none; /* hide for larger screens */
+}
+/* back to the top button end */
 
 /* - - - - - - - CLASSES END - - - - - - - */
 
@@ -496,5 +507,28 @@
 
     .bg-img { /*paralax bacgkground image section*/
         height: 50vh;
+    }
+
+    /* only appears for this vw size */
+    .back-to-top {
+        display: flex; /* enable flexbox */
+        justify-content: center; /* center horizontally */
+        align-items: center; /* center vertically */
+        position: fixed;
+        bottom: 20px;
+        right: 20px; /* bottom right of the screen for ergonomics */
+        height: 50px;
+        width: 50px;
+        padding: 0px 1px 3px 0px;
+        font-size: 40px;
+        text-decoration: none;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.500); /* inverted colors of content */
+        color: var(--foreground);
+        transition: color 0.5s ease, background-color 0.5s ease;
+    }
+    .back-to-top:hover {
+        background-color: var(--sidebar-bg);
+        color: var(--accent-color);
     }
 }
