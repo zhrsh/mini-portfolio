@@ -1,7 +1,9 @@
 # Mini Portfolio
 
-![preview of mini portfolio theme](images/preview.gif)
 a HTML/CSS portfolio theme designed from scratch by Zahra A. S.
+<div style="text-align: center;">
+    <img src="images/preview.gif" alt="preview of mini portfolio theme" width="400"/>
+</div>
 
 ### features
 - responsive layout for mobile and smaller screens
