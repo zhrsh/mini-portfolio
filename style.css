@@ -9,6 +9,7 @@
         --content-bg: rgb(20, 20, 20); /* main content background color */
         --accent-color: rgb(197, 22, 22);
         --accent-color-darker: rgb(124, 16, 16);
+        --black: rgb(0, 0, 0); /* pitch black */
         --side-bar-width: 400px;
         --eb-garamond:'EB-Garamond', 'Times New Roman', Times, serif;
     }
@@ -91,7 +92,7 @@
         font-feature-settings: "ornm"; /* for EB Garamond ornaments like the finger bullet */
         line-height: 1.6;
         color: var(--foreground);
-        background-color: var(--content-bg);
+        background-color: var(--black);
     }
 
     p {
@@ -161,9 +162,16 @@
 /* section classes end */
 
 
-/* main container for the whole page */
+/* main container for the whole page + fadein animation */ 
 .container {
     display: flex;
+    opacity: 0; /* start fully transparent */
+    animation: fadeIn 3s forwards; /* apply the fadeIn animation */
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* end fully opaque */
+    }
 }
 
 
