@@ -1,4 +1,6 @@
 # Mini Portfolio
+
+![preview of mini portfolio theme](images/preview.gif)
 a HTML/CSS portfolio theme designed from scratch by Zahra A. S.
 
 ### features
