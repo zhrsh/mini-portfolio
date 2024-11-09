@@ -22,4 +22,4 @@ a HTML/CSS portfolio theme designed from scratch by Zahra A. S.
 - [EB Garamond](https://github.com/octaviopardo/EBGaramond12): SIL Open Font License (OFL)
 
 ### issues
-please report issues [here](https://github.com/zhr00000/mini-portfolio/issues)
+please report issues [here](https://github.com/zhrbash/mini-portfolio/issues)
