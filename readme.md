@@ -9,7 +9,7 @@ a HTML/CSS portfolio theme designed from scratch by Zahra A. S.
 - responsive layout for mobile and smaller screens
 - navigation scroll anchors
 - CSS animations (scale, color, filter)
-- paralax header image
+- paralax header image (only for desktop at the moment)
 - detailed about page
 - portfolio grid menu (currently a static example)
 - input form contact me page (static example)
