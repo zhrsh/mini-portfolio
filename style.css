@@ -99,6 +99,7 @@
 
     p {
         font-size: 20px;
+        transition: color 0.5s ease;
     }
 
     h1 {
@@ -107,6 +108,7 @@
         font-size: 75px;
         text-shadow: 0.05em 0.05em 0px black;
         margin-bottom: 15px;
+        transition: color 0.5s ease;
     }
 
     section {
@@ -207,6 +209,7 @@
         margin-top: 30px;
         margin-bottom: 30px;
         background-color: var(--foreground);
+        transition: background-color 0.5s ease;
     }
 
     .sidebar h2 {
