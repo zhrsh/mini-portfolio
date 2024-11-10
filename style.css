@@ -452,8 +452,8 @@
     .get-in-touch button {
         width: 100%;
         padding: 10px;
-        background-color: var(--accent-color);
-        color: var(--foreground);
+        background-color: var(--ignored-bm-accent);
+        color: var(--ignored-bm-foreground);
         text-transform: uppercase;
         border: none;
         cursor: pointer;
