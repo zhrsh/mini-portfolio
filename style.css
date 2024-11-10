@@ -145,15 +145,19 @@
 .links:hover {
     color: var(--accent-color);
 }
+/* font styles end */
+
 
 
 /* section classes */
 .bg-img-shorter {
     height: 30vh;
+    transition: filter 0.5s ease;
     background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /*with fallback lq image*/
 }
 .bg-img { /*paralax bacgkground image section*/
     height: 100vh;
+    transition: filter 0.5s ease;
     background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg);
 }
     .bg-img .title-container {
@@ -358,7 +362,7 @@
                 height: auto; /* Maintain aspect ratio */
                 object-fit: cover; /* Ensure the image covers the container */
                 display: block;
-                transition: transform 0.8s ease;
+                transition: transform 0.8s ease, filter 0.5s ease;
             }
             .about-pfp .pfp-img-container img:hover {
                 transform: scale(1.1);
@@ -512,6 +516,11 @@
 }
 
 @media (max-width: 556px) {
+
+    .bg-img, .bg-img-shorter {
+        background-attachment: scroll; /* Change to scroll for mobile */
+        background-size: cover; /* Ensure it covers the section */
+    }
 
     .container {
         flex-direction: column;
