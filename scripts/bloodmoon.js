@@ -6,7 +6,7 @@ let isToggled = false; // initialize boolean to track toggle state
 let isFiltered = false;
 
 // event handler to toggle colors (white <-> red)
-document.getElementById('change-color').addEventListener('click', function() {
+document.getElementById('secret-button-bm').addEventListener('click', function() {
 
     if (!isToggled) {
         // change color values of multiple CSS variables (isToggle = true)
@@ -23,7 +23,7 @@ document.getElementById('change-color').addEventListener('click', function() {
 });
 
 // event handler to toggle image filers (off <-> on)
-document.getElementById('change-color').addEventListener('click', function() {
+document.getElementById('secret-button-bm').addEventListener('click', function() {
     const image = document.getElementById('filter-bm-image');
     const backgroundBox = document.getElementById('filter-bm-bg');
 
