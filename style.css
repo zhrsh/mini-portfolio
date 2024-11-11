@@ -196,6 +196,7 @@
     background-position: center;
     background-attachment: fixed; /* this will create the parallax effect */
     z-index: -1; /* ensure this is behind the container */
+    transition: filter 0.5s ease; /* transition when bm theme is activated */
 }
 /* main container that holds the whole page + fadein animation */ 
 .container {

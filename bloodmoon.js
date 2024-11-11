@@ -22,10 +22,10 @@ document.getElementById('change-color').addEventListener('click', function() {
 
 });
 
-// event handler to toggle image filers 
+// event handler to toggle image filers (off <-> on)
 document.getElementById('change-color').addEventListener('click', function() {
     const image = document.getElementById('filter-bm-image');
-    const backgroundBox = document.getElementById('filter-bm-background');
+    const backgroundBox = document.getElementById('filter-bm-bg');
 
     if (!isFiltered) {
         // apply filter (isToggle = true)
