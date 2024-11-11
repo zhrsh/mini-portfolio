@@ -191,7 +191,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(images/paralax-hq.jpg);
+    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /* fallback low quality image */
+    background-color: var(--accent-color-darker); /* incase the lq image doesn't load either, set fallback color in place of the image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* this will create the parallax effect */
