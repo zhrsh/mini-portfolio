@@ -113,9 +113,6 @@
 
     section {
         position: relative;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
         width: 100%;
     }
 /* - - - - - - - TAGS END - - - - - - - */
@@ -150,11 +147,9 @@
 /* section classes */
 .bg-img-shorter {
     height: 30vh;
-    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /*with fallback lq image*/
 }
 .bg-img { /*paralax bacgkground image section*/
     height: 100vh;
-    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg);
 }
     .bg-img .title-container {
         position: absolute; 
@@ -181,6 +176,10 @@
     display: flex;
     opacity: 0; /* start fully transparent */
     animation: fadeIn 3s forwards; /* apply the fadeIn animation */
+    background-image: url(images/paralax-hq.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 @keyframes fadeIn {
     to {
