@@ -148,7 +148,7 @@
 .bg-img-shorter {
     height: 30vh;
 }
-.bg-img { /*paralax bacgkground image section*/
+.bg-img { /* transparent section to show paralax bacgkground image */
     height: 100vh;
 }
     .bg-img .title-container {
@@ -171,20 +171,34 @@
 /* section classes end */
 
 
-/* main container for the whole page + fadein animation */ 
-.container {
-    display: flex;
+
+/* fadeIn (most outer container) */
+.fadein {
     opacity: 0; /* start fully transparent */
     animation: fadeIn 3s forwards; /* apply the fadeIn animation */
-    background-image: url(images/paralax-hq.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 @keyframes fadeIn {
     to {
         opacity: 1; /* end fully opaque */
     }
+}
+/* behind the main container + fadein animation */ 
+.background-image {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/paralax-hq.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* this will create the parallax effect */
+    z-index: -1; /* ensure this is behind the container */
+}
+/* main container that holds the whole page + fadein animation */ 
+.container {
+    display: flex;
+    z-index: 1;
 }
 
 
@@ -521,7 +535,7 @@
         margin-left: 0; /* no margin on small screens */
     }
 
-    .bg-img { /*paralax bacgkground image section*/
+    .bg-img { /* transparent section to show paralax bacgkground image */
         height: 50vh;
     }
 
