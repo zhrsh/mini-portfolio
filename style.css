@@ -221,14 +221,6 @@
         margin-bottom: 15px;
         font-style: normal;
     }
-    .sidebar a {
-        text-decoration: none;
-        color: var(--foreground);
-        transition: color 0.5s ease;
-    }
-    .sidebar a:hover {
-        color: var(--accent-color);
-    }
     
     .sidebar-subtitle {
         text-align: center;
