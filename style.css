@@ -364,6 +364,7 @@
                 height: auto; /* Maintain aspect ratio */
                 overflow: hidden;
                 position: relative; /* For positioning child elements if needed */
+                border: var(--foreground) 0.01px solid; /* tiny border to make the content scale under the frame smoothly */
             }
             .about-pfp .pfp-img-container img {
                 width: 100%; /* Make the image responsive */
