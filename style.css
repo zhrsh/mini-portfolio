@@ -521,6 +521,10 @@
           "about-list1"
           "about-list2";
     }
+    .about-pfp {
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 @media (max-width: 600px) {
