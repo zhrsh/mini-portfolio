@@ -355,6 +355,9 @@
             padding: 10px;
             font-style: italic;
             color: var(--content-bg);
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
         }
             .about-pfp .pfp-img-container {
                 width: 100%; /* Make the image responsive */
@@ -520,9 +523,9 @@
     }
 }
 
-@media (max-width: 556px) {
+@media (max-width: 600px) {
 
-    .bg-img, .bg-img-shorter {
+    .background-image {
         background-attachment: scroll; /* Change to scroll for mobile */
         background-size: cover; /* Ensure it covers the section */
     }
