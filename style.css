@@ -162,7 +162,7 @@
         .bg-img .title-container h2 {
             text-align: right;
             font-size: 100px;
-            margin-top: -35px;
+            margin-top: -0.4em; /* make according to font size for responsiveness */
             text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);
         }
         .bg-img .title-container p {
@@ -358,6 +358,7 @@
             display: flex;
             gap: 10px;
             flex-direction: column;
+            align-items: center;
         }
             .about-pfp .pfp-img-container {
                 width: 100%; /* Make the image responsive */
@@ -523,7 +524,6 @@
     }
     .about-pfp {
         flex-direction: row;
-        align-items: center;
     }
     .pfp-subtitle {
         font-size: 2.6vw;
@@ -581,6 +581,34 @@
         color: var(--accent-color);
     }
     .pfp-subtitle {
-        font-size: 3.6vw;
+        font-size: 3.7vw;
+    }
+}
+
+/* for very very small devices :/ */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 20vw;
+        margin-bottom: 0px;
+    }
+    .about-pfp {
+        flex-direction: column;
+    }
+    .pfp-subtitle, p, li {
+        font-size: 18px;
+    }
+    .bg-img .title-container {
+        bottom: 0px;
+        right: 30px;
+    }
+    /* for the header title */
+    .bg-img .title-container h2 {
+        font-size: 25vw;
+    }
+    .bg-img .title-container p {
+        font-size: 9vw;
+    }
+    .content .content-sections, .sidebar {
+        padding: 20px;
     }
 }
