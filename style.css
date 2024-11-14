@@ -162,7 +162,7 @@
         .bg-img .title-container h2 {
             text-align: right;
             font-size: 100px;
-            margin-top: -35px;
+            margin-top: -0.4em; /* make according to font size for responsiveness */
             text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);
         }
         .bg-img .title-container p {
@@ -221,8 +221,8 @@
     .sidebar hr { /*separator for sidebar*/
         border: none;
         height: 0.5px;
-        margin-left: 70px;
-        margin-right: 70px;
+        margin-left: 20%; /* user percentage for responsiveness */
+        margin-right: 20%; /* user percentage for responsiveness */
         margin-top: 30px;
         margin-bottom: 30px;
         background-color: var(--foreground);
@@ -309,7 +309,7 @@
     }
         .custom-bullets li {
             position: relative; /* Position for custom bullet */
-            padding-left: 35px; /* Space for the bullet */
+            padding-left: 1.75em; /* space the bullet according to font size */
         }
         .custom-bullets li::before {
             content: '☞'; /* finger bullet character */
@@ -358,6 +358,7 @@
             display: flex;
             gap: 10px;
             flex-direction: column;
+            align-items: center;
         }
             .about-pfp .pfp-img-container {
                 width: 100%; /* Make the image responsive */
@@ -522,6 +523,12 @@
           "about-list1"
           "about-list2";
     }
+    .about-pfp {
+        flex-direction: row;
+    }
+    .pfp-subtitle {
+        font-size: 2.6vw;
+    }
 }
 
 @media (max-width: 600px) {
@@ -573,5 +580,35 @@
     .back-to-top:hover {
         background-color: var(--sidebar-bg);
         color: var(--accent-color);
+    }
+    .pfp-subtitle {
+        font-size: 3.7vw;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 20vw;
+        margin-bottom: 0px;
+    }
+    .about-pfp {
+        flex-direction: column;
+    }
+    .pfp-subtitle, p, li {
+        font-size: 18px;
+    }
+    .bg-img .title-container {
+        bottom: 0px;
+        right: 30px;
+    }
+    /* for the header title */
+    .bg-img .title-container h2 {
+        font-size: 25vw;
+    }
+    .bg-img .title-container p {
+        font-size: 9vw;
+    }
+    .content .content-sections, .sidebar {
+        padding: 20px;
     }
 }
