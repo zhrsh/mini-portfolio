@@ -1,40 +1,41 @@
-/* - - - - - - - CSS BY ZAHRA AS - - - - - - - */
+/* ========== CSS BY ZAHRA AS ========== */
 
 
 
-/* global (custom) variables */
-    :root {
-        --sidebar-bg: rgb(14, 14, 14); /* sidebar background color */
-        --foreground: white; /* mostly for text color */
-        --ignored-bm-foreground: white; /* foreground color that will not change when bloodmoon theme is activated */
-        --content-bg: rgb(20, 20, 20); /* main content background color */
-        --accent-color: rgb(197, 22, 22);
-        --ignored-bm-accent: rgb(197, 22, 22); /* accent color that will not change when bloodmoon theme is activated */
-        --accent-color-darker: rgb(124, 16, 16);
-        --black: rgb(0, 0, 0); /* pitch black */
-        --side-bar-width: 400px;
-        --eb-garamond:'EB-Garamond', 'Times New Roman', Times, serif;
-    }
-/* global variables end */
+/* ======== global variables ======== */
+:root {
+    --sidebar-bg: rgb(14, 14, 14); /* sidebar background color */
+    --foreground: white; /* mostly for text color */
+    --ignored-bm-foreground: white; /* foreground color that will not change when bloodmoon theme is activated */
+    --content-bg: rgb(20, 20, 20); /* main content background color */
+    --accent-color: rgb(197, 22, 22);
+    --ignored-bm-accent: rgb(197, 22, 22); /* accent color that will not change when bloodmoon theme is activated */
+    --accent-color-darker: rgb(124, 16, 16);
+    --black: rgb(0, 0, 0); /* pitch black */
+    --side-bar-width: 400px;
+    --eb-garamond:'EB-Garamond', 'Times New Roman', Times, serif;
+}
+/* ======== global variables end ======== */
 
 
 
-/* custom fonts: Blackletter */
+/* ======== font imports ======== */
+/* font: Blackletter */
     @font-face { 
         font-family: 'Blackletter';
         src: url('fonts/meyne_textur.ttf') format('truetype');
         font-weight: 400; /* range of weights */
         font-style: normal;
     }
-/* custom fonts: Blackletter_Fallback, incase the ttf does not load */
+/* font: Blackletter_Fallback, incase the ttf does not load */
     @font-face { 
         font-family: 'Blackletter_Fallback';
         src: url('fonts/UnifrakturMaguntia-webfont.woff') format('woff');
         font-weight: 400; /* range of weights */
         font-style: normal;
     }
-/* custom fonts: EB-Garamond */
-/* normal import */
+/* font: EB-Garamond */
+    /* normal import */
     @font-face { 
         font-family: 'EB-Garamond';
         src: url('fonts/EBGaramond-Regular.woff2') format('woff2'), 
@@ -74,11 +75,11 @@
         font-weight: 600; /* semibold Italic */
         font-style: italic;
     }
-/* fonts end */
+/* ======== font imports end ======== */
 
 
 
-/* - - - - - - - TAGS - - - - - - - */
+/* ======== type selectors ======== */
     * {
         box-sizing: border-box;
         margin: 0;
@@ -115,108 +116,100 @@
         position: relative;
         width: 100%;
     }
-/* - - - - - - - TAGS END - - - - - - - */
+/* ======== type selectors end ======== */
 
 
 
-/* - - - - - - - CLASSES - - - - - - - */
+/* ======== general styles ======== */
+    /* class for blackletter font */
+    .blackletter {
+        font-family: 'Blackletter', 'Blackletter_Fallback', 'EB-Garamond', cursive;
+        font-weight: 400;
+    }
 
-/* font styles */
-.goth {
-    font-family: 'Blackletter', 'Blackletter_Fallback', 'EB-Garamond', cursive;
-    font-weight: 400;
-}
+    /* class for EB Garamond /swash/ font */
+    .swash {
+        font-family: 'EB-Garamond', 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-feature-settings: 'swsh' 1; /* EB Garamond swash */
+        font-weight: 400;
+    }
 
-.swash {
-    font-family: 'EB-Garamond', 'Times New Roman', Times, serif;
-    font-style: italic;
-    font-feature-settings: 'swsh' 1; /* EB Garamond swash */
-    font-weight: 400;
-}
+    .links {
+        text-decoration: none;
+        color: var(--foreground);
+        transition: color 0.5s ease;
+    }
+    .links:hover {
+        color: var(--accent-color);
+    }
 
-.links {
-    text-decoration: none;
-    color: var(--foreground);
-    transition: color 0.5s ease;
-}
-.links:hover {
-    color: var(--accent-color);
-}
-/* font styles end */
-
-
-
-/* section classes */
-.bg-img-shorter {
-    height: 30vh;
-}
-.bg-img { /* transparent section to show paralax bacgkground image */
-    height: 100vh;
-}
-    .bg-img .title-container {
+    .custom-bullets {
+        list-style-type: none; /* remove default bullets */
+        padding: 0; /* remove padding */
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    .custom-bullets li {
+        position: relative; /* Position for custom bullet */
+        padding-left: 1.75em; /* space the bullet according to font size */
+    }
+    .custom-bullets li::before {
+        content: '☞'; /* finger bullet character */
         position: absolute; 
-        bottom: 25px;
-        right: 70px;
-        color: var(--ignored-bm-foreground);
+        left: 0; /* align to the left */
     }
-        .bg-img .title-container h2 {
-            text-align: right;
-            font-size: 100px;
-            margin-top: -0.4em; /* make according to font size for responsiveness */
-            text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);
-        }
-        .bg-img .title-container p {
-            text-align: right;
-            font-size: 35px;
-            text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);;
-        }
-/* section classes end */
+/* ======== general styles end ======== */
 
 
 
-/* fadeIn (most outer container) */
-.fadein {
-    opacity: 0; /* start fully transparent */
-    animation: fadeIn 3s forwards; /* apply the fadeIn animation */
-}
-@keyframes fadeIn {
-    to {
-        opacity: 1; /* end fully opaque */
+/* ======== main containers ======== */
+    /* fadeIn (most outer container) */
+    .fadein {
+        opacity: 0; /* start fully transparent */
+        animation: fadeIn 3s forwards; /* apply the fadeIn animation */
     }
-}
-/* behind the main container + fadein animation */ 
-.background-image {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /* fallback low quality image */
-    background-color: var(--accent-color-darker); /* incase the lq image doesn't load either, set fallback color in place of the image */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* this will create the parallax effect */
-    z-index: -1; /* ensure this is behind the container */
-    transition: filter 0.5s ease; /* transition when bm theme is activated */
-}
-/* main container that holds the whole page + fadein animation */ 
-.container {
-    display: flex;
-    z-index: 1;
-}
+    @keyframes fadeIn {
+        to {
+            opacity: 1; /* end fully opaque */
+        }
+    }
+
+    /* behind the .container */ 
+    .background-image {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /* fallback low quality image */
+        background-color: var(--accent-color-darker); /* incase the lq image doesn't load either, set fallback color in place of the image */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* this will create the parallax effect */
+        z-index: -1; /* ensure this is behind the container */
+        transition: filter 0.5s ease; /* transition for when bm theme is activated */
+    }
+
+    /* main container that holds the whole page */ 
+    .container {
+        display: flex;
+        z-index: 1;
+    }
+/* ======== main containers end ======== */
 
 
 
-/* side bar */
-.sidebar {
-    width: var(--side-bar-width); /* fixed width for the sidebar */
-    background: var(--sidebar-bg);
-    color: var(--foreground);
-    padding: 40px;
-    position: fixed; /* fixed position */
-    height: 100vh; /* full height */
-    overflow: scroll;
-}
+/* ======== side bar (left of .content) ======== */
+    .sidebar {
+        width: var(--side-bar-width); /* fixed width for the sidebar */
+        background: var(--sidebar-bg);
+        color: var(--foreground);
+        padding: 40px;
+        position: fixed; /* fixed position */
+        height: 100vh; /* full height */
+        overflow: scroll;
+    }
 
     .sidebar hr { /*separator for sidebar*/
         border: none;
@@ -270,20 +263,21 @@
         color: var(--accent-color);
         text-decoration: none;
     }
-/* side bar end */
+/* ======== side bar end ======== */
 
 
 
-/* content */
-.content {
-    margin-left: var(--side-bar-width); /* space for the sidebar */
-    flex: 1; /* take the remaining space */
-}
+/* ======== content (right to the .sidebar) ======== */
+    .content {
+        margin-left: var(--side-bar-width); /* space for the sidebar */
+        flex: 1; /* take the remaining space */
+    }
 
     .content .content-sections {
         padding: 40px;
         background-color: var(--content-bg);
     }
+
     .content-sections h2 {
         text-transform: uppercase;
         font-weight: 400;
@@ -296,112 +290,134 @@
         margin-bottom: 50px;
         background-color: var(--ignored-bm-foreground);
     }
-/* content end */
+/* ======== content end ======== */
 
 
 
-/* about */
-    .custom-bullets {
-        list-style-type: none; /* Remove default bullets */
-        padding: 0; /* Remove padding */
-        margin-left: 10px;
-        font-size: 20px;
+/* ======== section classes ======== */
+    .bg-img-shorter { /* transparent section to show paralax bacgkground image behind it (shorter) */
+        height: 30vh;
     }
-        .custom-bullets li {
-            position: relative; /* Position for custom bullet */
-            padding-left: 1.75em; /* space the bullet according to font size */
-        }
-        .custom-bullets li::before {
-            content: '☞'; /* finger bullet character */
-            position: absolute; 
-            left: 0; /* align to the left */
-        }
-    
-        /* used grid.layoutit.com */
-        .about {  
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 20px 20px; 
-            grid-auto-flow: row;
-            grid-template-areas:
-                "about-pfp about-text about-text"
-                "about-pfp about-list1 about-list2"
-                ". . .";
-        }
-        .about .header {
-            background-color: var(--foreground);
-            width: 100%;
-            color: var(--content-bg);
-        }
-        .about h3 {
-            font-size: 24px;
-        }
-        .about h2 {
-            font-size: 27px;
-            color: var(--content-bg);
-            background-color: var(--ignored-bm-foreground);
-            padding: 1px 1px 1px 15px; /*last one is left*/
-            margin-bottom: 20px;
-        }
-        .about hr {
-            margin: 20px 0px 0px 0px;
-        }
-        /*grid element 1*/
-        .about-pfp { 
-            grid-area: about-pfp; 
-            height: min-content;
-            background-color: var(--ignored-bm-foreground);
-            padding: 10px;
-            font-style: italic;
-            color: var(--content-bg);
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-            align-items: center;
-        }
-            .about-pfp .pfp-img-container {
-                width: 100%; /* Make the image responsive */
-                height: auto; /* Maintain aspect ratio */
-                overflow: hidden;
-                position: relative; /* For positioning child elements if needed */
-                border: var(--foreground) 0.01px solid; /* tiny border to make the content scale under the frame smoothly */
-            }
-            .about-pfp .pfp-img-container img {
-                width: 100%; /* Make the image responsive */
-                height: auto; /* Maintain aspect ratio */
-                object-fit: cover; /* Ensure the image covers the container */
-                display: block;
-                transition: transform 0.8s ease, filter 0.5s ease;
-            }
-            .about-pfp .pfp-img-container img:hover {
-                transform: scale(1.1);
-            }
-        /*grid element 2*/
-        .about-text { 
-            grid-area: about-text; 
-            height: auto;
-        }
-            .about-text h2 {
-                font-size: 38px;
-                background-color: var(--ignored-bm-foreground);
-            }
 
-        /*grid element 3*/
-        .about-list1 { 
-            grid-area: about-list1; 
+    .bg-img { /* transparent section to show paralax bacgkground image behind it (100vh) */
+        height: 100vh;
+    }
+
+    .bg-img .title-container {
+        position: absolute; 
+        bottom: 25px;
+        right: 70px;
+        color: var(--ignored-bm-foreground);
+    }
+
+    .bg-img .title-container h2 { /* for the transparent section with text */
+        text-align: right;
+        font-size: 100px;
+        margin-top: -0.4em; /* make according to font size for responsiveness */
+        text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);
+    }
+
+    .bg-img .title-container p {
+        text-align: right;
+        font-size: 35px;
+        text-shadow: 0.05em 0.05em 0px rgba(0, 0, 0, 0.30);;
+    }
+
+    /* button to activate the bloodmoon theme */
+    #secret-button-bm {
+        cursor: help;
+    }
+/* ======== section classes end ======== */
+
+
+
+/* ======== about container ======== */
+    /* about grid container (made using grid.layoutit.com) */
+    .about {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px 20px; 
+        grid-auto-flow: row;
+        grid-template-areas:
+            "about-pfp about-text about-text"
+            "about-pfp about-list1 about-list2"
+            ". . .";
+    }
+    .about .header {
+        background-color: var(--foreground);
+        width: 100%;
+        color: var(--content-bg);
+    }
+    .about h3 {
+        font-size: 24px;
+    }
+    .about h2 {
+        font-size: 27px;
+        color: var(--content-bg);
+        background-color: var(--ignored-bm-foreground);
+        padding: 1px 1px 1px 15px; /*last one is left*/
+        margin-bottom: 20px;
+    }
+    .about hr {
+        margin: 20px 0px 0px 0px;
+    }
+
+    /* grid element 1 */
+    .about-pfp { 
+        grid-area: about-pfp; 
+        height: min-content;
+        background-color: var(--ignored-bm-foreground);
+        padding: 10px;
+        font-style: italic;
+        color: var(--content-bg);
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-pfp .pfp-img-container {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        overflow: hidden;
+        position: relative; /* For positioning child elements if needed */
+        border: var(--foreground) 0.01px solid; /* tiny border to make the content scale under the frame smoothly */
+    }
+    .about-pfp .pfp-img-container img {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container */
+        display: block;
+        transition: transform 0.8s ease, filter 0.5s ease;
+    }
+    .about-pfp .pfp-img-container img:hover {
+        transform: scale(1.1);
+    }
+
+    /* grid element 2 */
+    .about-text { 
+        grid-area: about-text; 
+        height: auto;
+    }
+        .about-text h2 {
+            font-size: 38px;
+            background-color: var(--ignored-bm-foreground);
         }
 
-        /*grid element 4*/
-        .about-list2 { 
-            grid-area: about-list2; 
-        }
-/* about end */
+    /* grid element 3 */
+    .about-list1 { 
+        grid-area: about-list1; 
+    }
+
+    /* grid element 4 */
+    .about-list2 { 
+        grid-area: about-list2; 
+    }
+/* ======== about container end ======== */
 
 
             
-/* portfolio container */
-
+/* ======== portfolio container ======== */
     .portfolio-container {
         display: grid;
         margin-top: 15px;
@@ -442,11 +458,11 @@
         box-sizing: border-box; /* ensure padding is included in width */
         transition: color 0.8s ease;
     }
-/* portfolio end */
+/* ======== portfolio end ======== */
 
 
 
-/* get in touch container */
+/* ======== get in touch container ======== */
     .get-in-touch {
         margin: 0 auto;
         padding: 30px;
@@ -482,22 +498,21 @@
     .get-in-touch button:hover {
         background-color: var(--accent-color-darker);
     }
-/* get in touch end */
+/* ======== get in touch end ======== */
 
 
 
-/* back to the top button for mobile only */
+/* ======== back to the top button (for mobile only) ======== */
 .back-to-top {
     display: none; /* hide for larger screens */
 }
-/* back to the top button end */
-
-/* - - - - - - - CLASSES END - - - - - - - */
+/* ======== back to the top button end ======== */
 
 
 
-/* - - - - - - - RESPONSIVE STYLES - - - - - - - */
+/* ======== media queries ======== */
 
+/* large desktops */
 @media (max-width: 1180px) {
     .sidebar {
         width: 200px; /* adjust sidebar width for smaller screens */
@@ -511,6 +526,7 @@
     }
 }
 
+/* smaller desktops / tablets */
 @media (max-width: 900px) {
     .portfolio-container {
         grid-template-columns: 1fr; /* change portfolio grid to a single column */
@@ -531,6 +547,7 @@
     }
 }
 
+/* tablets / mobile devices */
 @media (max-width: 600px) {
 
     .background-image {
@@ -586,6 +603,7 @@
     }
 }
 
+/* small mobile devices */
 @media (max-width: 400px) {
     h1 {
         font-size: 20vw;
@@ -612,3 +630,5 @@
         padding: 20px;
     }
 }
+
+/* ======== media queries end ======== */

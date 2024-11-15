@@ -1,5 +1,4 @@
-/* - - - - - - - JS BY ZAHRA AS - - - - - - - */
-
+/* ========== JS BY ZAHRA AS ========== */
 // simple script to activate the hidden "bloodmoon" theme 
 
 let isToggled = false; // initialize boolean to track toggle state
@@ -37,5 +36,5 @@ document.getElementById('secret-button-bm').addEventListener('click', function()
         backgroundBox.style.filter = 'none';
     }
 
-    isFiltered = !isFiltered
+    isFiltered = !isFiltered // toggle the filter state
 });
