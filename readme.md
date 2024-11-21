@@ -1,6 +1,6 @@
 # Mini Portfolio
 
-a HTML/CSS portfolio theme designed from scratch by Zahra A. S.
+a HTML/CSS portfolio theme designed from scratch
 <div style="text-align: center;">
     <img src="images/preview.gif" alt="preview of mini portfolio theme" width="400"/>
 </div>
@@ -37,7 +37,3 @@ all fonts used are under OFL license
 
 ## issues
 please report issues [here](https://github.com/zhrbash/mini-portfolio/issues)
-
-## license
-
-© Zahra A. S. 2024. All rights reserved. 
