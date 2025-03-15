@@ -11,6 +11,7 @@
     --accent-color: rgb(197, 22, 22);
     --ignored-bm-accent: rgb(197, 22, 22); /* accent color that will not change when bloodmoon theme is activated */
     --accent-color-darker: rgb(124, 16, 16);
+    --accent-color-alpha: rgba(197, 22, 22, 0.5);
     --black: rgb(0, 0, 0); /* pitch black */
     --side-bar-width: 400px;
     --eb-garamond:'EB-Garamond', 'Times New Roman', Times, serif;
@@ -121,6 +122,16 @@
 
 
 /* ======== general styles ======== */
+    ::selection {
+        background-color: var(--accent-color-alpha);
+        color: var(--foreground);
+    }
+    /* for firefox */
+    ::-moz-selection {
+        background-color: var(--accent-color-alpha); 
+        color: var(--foreground);
+    }
+
     /* class for blackletter font */
     .blackletter {
         font-family: 'Blackletter', 'Blackletter_Fallback', 'EB-Garamond', cursive;
