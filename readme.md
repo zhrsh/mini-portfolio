@@ -1,6 +1,7 @@
 # Mini Portfolio
 
-A HTML/CSS portfolio theme designed from scratch
+A gothic-themed portfolio site. No frameworks.
+
 <div style="text-align: center;">
     <img src="images/preview.gif" alt="preview of mini portfolio theme" width="400"/>
 </div>
