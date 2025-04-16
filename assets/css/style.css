@@ -25,14 +25,14 @@
 /* font: Blackletter */
 @font-face { 
     font-family: 'Blackletter';
-    src: url('fonts/meyne_textur.ttf') format('truetype');
+    src: url('../fonts/meyne_textur.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 /* font: Blackletter_Fallback, incase the ttf does not load */
 @font-face { 
     font-family: 'Blackletter_Fallback';
-    src: url('fonts/UnifrakturMaguntia-webfont.woff') format('woff');
+    src: url('../fonts/UnifrakturMaguntia-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -40,40 +40,40 @@
 /* normal import */
 @font-face { 
     font-family: 'EB-Garamond';
-    src: url('fonts/EBGaramond-Regular.woff2') format('woff2'), 
-        url('fonts/ebgaramond-variablefont_wght.woff') format('woff');
+    src: url('../fonts/EBGaramond-Regular.woff2') format('woff2'), 
+        url('../fonts/ebgaramond-variablefont_wght.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'EB-Garamond';
-    src: url('fonts/EBGaramond-Medium.woff2') format('woff2');
+    src: url('../fonts/EBGaramond-Medium.woff2') format('woff2');
     font-weight: 500; /* medium */
     font-style: normal;
 }
 @font-face {
     font-family: 'EB-Garamond';
-    src: url('fonts/EBGaramond-SemiBold.woff2') format('woff2');
+    src: url('../fonts/EBGaramond-SemiBold.woff2') format('woff2');
     font-weight: 600; /* semiBold */
     font-style: normal;
 }
 /* italic import */
 @font-face {
     font-family: 'EB-Garamond';
-    src: url('fonts/EBGaramond-Italic.woff2') format('woff2'), 
-        url('fonts/ebgaramond-italic-variablefont_wght.woff') format('woff');
+    src: url('../fonts/EBGaramond-Italic.woff2') format('woff2'), 
+        url('../fonts/ebgaramond-italic-variablefont_wght.woff') format('woff');
     font-weight: 400; /* regular italic */
     font-style: italic; 
 }
 @font-face {
     font-family: 'EB-Garamond';
-    src: url('fonts/EBGaramond-MediumItalic.woff2') format('woff2');
+    src: url('../fonts/EBGaramond-MediumItalic.woff2') format('woff2');
     font-weight: 500; /* medium Italic */
     font-style: italic;
 }
 @font-face {
     font-family: 'EB-Garamond';
-    src: url('fonts/EBGaramond-SemiBoldItalic.woff2') format('woff2');
+    src: url('../fonts/EBGaramond-SemiBoldItalic.woff2') format('woff2');
     font-weight: 600; /* semibold Italic */
     font-style: italic;
 }
@@ -198,7 +198,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(images/paralax-hq.jpg), url(images/paralax-lq.jpg); /* fallback low quality image */
+    background-image: url(../img/paralax-hq.jpg), url(../img/paralax-lq.jpg); /* fallback low quality image */
     background-color: var(--accent-color-darker); /* incase the lq image doesn't load either, set fallback color in place of the image */
     background-size: cover;
     background-position: center;
